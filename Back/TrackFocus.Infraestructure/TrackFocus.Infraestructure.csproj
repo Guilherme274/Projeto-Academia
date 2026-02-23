@@ -13,4 +13,9 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.16.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TrackFocus.Domain\TrackFocus.Domain.csproj" />
+    <ProjectReference Include="..\TrackFocus.Application\TrackFocus.Application.csproj" />
+  </ItemGroup>
+
 </Project>
