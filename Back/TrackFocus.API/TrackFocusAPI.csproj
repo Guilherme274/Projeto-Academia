@@ -24,4 +24,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TrackFocus.Domain\TrackFocus.Domain.csproj" />
+    <ProjectReference Include="..\TrackFocus.Infraestructure\TrackFocus.Infraestructure.csproj" />
+    <ProjectReference Include="..\TrackFocus.Application\TrackFocus.Application.csproj" />
+  </ItemGroup>
+
 </Project>
