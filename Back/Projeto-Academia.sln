@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Back", "Back", "{11BF4459-C332-B9BD-164A-F44681F2EC0B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackFocusAPI", "Back\TrackFocusAPI\TrackFocusAPI.csproj", "{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrackFocus.API", "TrackFocus.API", "{D2EB33C1-7F7E-2566-909F-99F7DA8CC7D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackFocusAPI", "TrackFocus.API\TrackFocusAPI.csproj", "{0E98BE53-DB70-498D-A7C2-5A3AAD1204C3}"
@@ -27,18 +23,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}.Debug|x64.Build.0 = Debug|Any CPU
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}.Debug|x86.Build.0 = Debug|Any CPU
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}.Release|Any CPU.Build.0 = Release|Any CPU
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}.Release|x64.ActiveCfg = Release|Any CPU
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}.Release|x64.Build.0 = Release|Any CPU
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}.Release|x86.ActiveCfg = Release|Any CPU
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974}.Release|x86.Build.0 = Release|Any CPU
 		{0E98BE53-DB70-498D-A7C2-5A3AAD1204C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0E98BE53-DB70-498D-A7C2-5A3AAD1204C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E98BE53-DB70-498D-A7C2-5A3AAD1204C3}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -92,7 +76,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{24116C0C-2B44-DFAD-5B6F-3E7E8D56A974} = {11BF4459-C332-B9BD-164A-F44681F2EC0B}
 		{0E98BE53-DB70-498D-A7C2-5A3AAD1204C3} = {D2EB33C1-7F7E-2566-909F-99F7DA8CC7D7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
