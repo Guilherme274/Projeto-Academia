@@ -1,4 +1,4 @@
 namespace TrackFocus.Application.DTOs.Request
 {
-    public record LoginResponse(int Id, string Username);
+    public record LoginResponse(int Id, string Email);
 }
