@@ -8,6 +8,8 @@ namespace TrackFocus.Application.DTOs.Request
         [Required]
         string Username,
         [Required]
+        string Email,
+        [Required]
         [DataType(DataType.Password)]
         string Password,
         [Required]
