@@ -24,6 +24,7 @@ namespace TrackFocus.Infraestructure.Service
             var user = new User
             {
               UserName = request.Username,
+              Email = request.Email,
               DataNascimento = request.DataNascimento  
             };
 
@@ -32,20 +33,27 @@ namespace TrackFocus.Infraestructure.Service
             if (!result.Succeeded)
                 throw new ApplicationException("Erro ao criar Usuário");
             else
-                return new RegisterResponse(user.Id, request.Username, request.DataNascimento);
+                return new RegisterResponse(user.Id, request.Username, request.Email, request.DataNascimento);
         }
         public async Task<string> LoginUserAsync(LoginRequest request)
         {
-            var result = await _signInManager.PasswordSignInAsync(request.Username, request.Password, false, false);
+            var user = await _userManager.FindByEmailAsync(request.Email);
 
-            if (!result.Succeeded)
-                throw new ApplicationException("Usuário não autenticado");
-            
-            var user = await _userManager.FindByNameAsync(request.Username);
+            if(user != null)
+            {
+                var result = await _signInManager.PasswordSignInAsync(user.UserName, request.Password, false, false);
 
-            string token = _tokenService.GenerateToken(user);
-            
-            return token;
+                if (!result.Succeeded)
+                    throw new ApplicationException("Usuário não autenticado");
+                
+                string token = _tokenService.GenerateToken(user);
+                
+                return token;
+            }
+            else
+            {
+                throw new ApplicationException("Email não reconhecido");
+            }
         }
     }
 }
