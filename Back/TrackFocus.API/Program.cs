@@ -8,6 +8,7 @@ using TrackFocus.Domain.Entities;
 using TrackFocus.Infraestructure.Data;
 using TrackFocus.Infraestructure.Service;
 using TrackFocus.API.Endpoints;
+using TrackFocus.Infraestructure.Data.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-string connString = builder.Configuration.GetConnectionString("UsuarioConnection");
+string connString = builder.Configuration.GetConnectionString("DbConnection");
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -24,10 +25,13 @@ builder.Services.AddDbContext<SecurityContext>(options =>
 {
     options.UseMySql(connString,ServerVersion.AutoDetect(connString));
 });
-
 builder.Services.AddIdentity<User,IdentityRole>()
                 .AddEntityFrameworkStores<SecurityContext>()
                 .AddDefaultTokenProviders();
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseMySql(connString, ServerVersion.AutoDetect(connString));
+});                
 
 builder.Services.AddAuthentication(options =>
 {
