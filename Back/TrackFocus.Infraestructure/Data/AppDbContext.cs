@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using TrackFocus.Domain.Entities;
 
 namespace TrackFocus.Infraestructure.Data
 {
@@ -8,5 +9,8 @@ namespace TrackFocus.Infraestructure.Data
         {
             
         }
+
+        public DbSet<Exercicio> Exercicios { get; set; }
+        public DbSet<Serie> Series { get; set; }
     }
 }
