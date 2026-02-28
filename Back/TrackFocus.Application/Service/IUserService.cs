@@ -5,7 +5,7 @@ namespace TrackFocus.Application.Service
 {
     public interface IUserService
     {
-        public Task<RegisterResponse> RegisterUserAsync(RegisterRequest request);
-        public Task<string>LoginUserAsync(LoginRequest request);
+        public Task<string> RegisterUserAsync(RegisterRequest request);
+        public Task<LoginResponse>LoginUserAsync(LoginRequest request);
     }
 }
