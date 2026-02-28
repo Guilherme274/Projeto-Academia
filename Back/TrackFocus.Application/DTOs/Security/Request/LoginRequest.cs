@@ -2,5 +2,5 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TrackFocus.Application.DTOs.Request
 {
-    public record LoginRequest([Required] string Email,[Required] string Password, [Required] DateTime DataNascimento);
+    public record LoginRequest([Required] string Email,[Required] string Password);
 }
