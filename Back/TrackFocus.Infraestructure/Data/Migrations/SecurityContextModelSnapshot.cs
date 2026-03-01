@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TrackFocus.Infraestructure.Data;
+using TrackFocus.Infraestructure.Data.Security;
+
 
 #nullable disable
 
