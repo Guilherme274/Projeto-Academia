@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticAssets;
 using TrackFocus.Application.DTOs.Request;
 using TrackFocus.Application.DTOs.Response;
@@ -11,18 +13,18 @@ namespace TrackFocus.API.Endpoints
     {
         public static void MapUserEndpoints(this WebApplication app)
         {
-            app.MapPost("/register", async Task<IResult>(RegisterRequest request, IUserService userService) =>
+            app.MapPost("/register", async (RegisterRequest request, IUserService userService) =>
             {
-                RegisterResponse response = await userService.RegisterUserAsync(request);
+                await userService.RegisterUserAsync(request);
 
-                return Results.Created($"/register/{response.Id}", response);
+                return Results.Created();
             });
 
-            app.MapPost("/login", async Task<string>(LoginRequest request, IUserService userService) =>
+            app.MapPost("/login", async (LoginRequest request, IUserService userService) =>
             {
-                string token = await userService.LoginUserAsync(request);
+                var response = await userService.LoginUserAsync(request);
 
-                return token;
+                return Results.Ok(response);
             });
         }
     }
