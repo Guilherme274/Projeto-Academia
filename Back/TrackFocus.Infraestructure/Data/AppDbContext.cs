@@ -10,6 +10,17 @@ namespace TrackFocus.Infraestructure.Data
             
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Categoria>().HasData(
+                new Categoria { Id = 1, Nome = "Peito"},
+                new Categoria { Id = 2, Nome = "Braço"},
+                new Categoria { Id = 3, Nome = "Perna"},
+                new Categoria { Id = 4, Nome = "Costas"},
+                new Categoria { Id = 5, Nome = "Ombro"}
+            );
+        }
+
         public DbSet<Exercicio> Exercicios { get; set; }
         public DbSet<Serie> Series { get; set; }
     }
